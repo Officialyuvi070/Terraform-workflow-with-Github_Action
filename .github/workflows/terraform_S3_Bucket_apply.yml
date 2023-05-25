@@ -31,7 +31,6 @@ jobs:
          
          
   apply-command-run: 
-     if: ${{ always() }}
      needs : init-command-run
      runs-on : ubuntu-latest
      env : 
