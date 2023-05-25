@@ -9,7 +9,7 @@ jobs:
   init-command-run: 
      runs-on : ubuntu-latest
      env : 
-      working-directory  : './S3_Bucket with Github Action'
+      working-directory  : ./S3_Bucket with Github Action
      steps:
      - uses: actions/checkout@v3
 
@@ -32,7 +32,8 @@ jobs:
      if: ${{ always() }}
      needs : init-command-run
      runs-on : ubuntu-latest
-     working-directory : ${{ env.working-directory }}
+     env : 
+      working-directory  : ./S3_Bucket with Github Action
      steps:
       - uses: actions/checkout@v3
       - name: Configure AWS credentials
