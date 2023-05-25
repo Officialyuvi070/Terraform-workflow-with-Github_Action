@@ -24,8 +24,10 @@ jobs:
        uses: hashicorp/setup-terraform@v2
      - name : Terraform Init
        run : terraform init
+       working-directory : ${{ env.working-directory}}
      - name : Terraform Plan
        run : terraform plan
+       working-directory : ${{ env.working-directory}}
          
          
   apply-command-run: 
