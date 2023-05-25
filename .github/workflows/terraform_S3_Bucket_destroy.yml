@@ -8,6 +8,8 @@ env:
 jobs:
   terraform_destroy:
     runs-on: ubuntu-latest
+    env : 
+      working-directory  : './S3_Bucket with Github Action'
 
     steps:
       - name: Checkout repository
@@ -23,6 +25,8 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init
+        working-directory : ${{ env.working-directory}}
 
       - name: Destroy S3 bucket
         run: terraform destroy -auto-approve
+        working-directory : ${{ env.working-directory}}
