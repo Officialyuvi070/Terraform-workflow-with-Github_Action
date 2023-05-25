@@ -9,7 +9,7 @@ jobs:
   init-command-run: 
      runs-on : ubuntu-latest
      env : 
-      working-directory  : './S3_Bucket with Github Action'
+      working-directory  : ./S3_Bucket with Github Action
      steps:
      - uses: actions/checkout@v3
 
@@ -24,8 +24,10 @@ jobs:
        uses: hashicorp/setup-terraform@v2
      - name : Terraform Init
        run : terraform init
+       working-directory : ${{ env.working-directory}}
      - name : Terraform Plan
        run : terraform plan
+       working-directory : ${{ env.working-directory}}
          
          
   apply-command-run: 

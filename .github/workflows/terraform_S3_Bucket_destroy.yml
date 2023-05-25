@@ -9,7 +9,7 @@ jobs:
   terraform_destroy:
     runs-on: ubuntu-latest
     env : 
-      working-directory  : './S3_Bucket with Github Action'
+      working-directory  : ./S3_Bucket with Github Action
 
     steps:
       - name: Checkout repository
