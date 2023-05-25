@@ -18,6 +18,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_S3 }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY_S3 }}
+          aws-session-token : '${{ secrets.AWS_SESSION_TOKEN_S3 }}'
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Initialize Terraform
