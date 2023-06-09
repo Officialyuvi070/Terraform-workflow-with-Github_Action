@@ -1,11 +1,7 @@
 terraform {
-  backend "s3" {
-    bucket  = "some_name_here"
-    key     = "networking/terraform.tfstate"
-    region  = "eu-west-2"
-  }
-}
-
-provider "aws" {
-  region = "eu-west-2"
+    backend "s3" {
+        bucket = "mybucket-1410"
+        key = "mayank/mayank-tfstate"
+        region = "us-east-1"
+    }
 }
